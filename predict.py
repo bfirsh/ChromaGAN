@@ -1,19 +1,23 @@
-import tempfile
-import shutil
-from pathlib import Path
 import os
-import config as config
-import numpy as np
-import cv2
-import dataClass as data
-import tensorflow as tf
-from keras.models import load_model
-from ChromaGANPrint import deprocess, reconstruct_no
+import shutil
+import sys
+import tempfile
+from pathlib import Path
 
 import cog
+import cv2
+import numpy as np
+import tensorflow as tf
+from keras.models import load_model
+
+sys.path.insert(0, "SOURCE")
+
+import config as config
+import dataClass as data
+from ChromaGANPrint import deprocess, reconstruct_no
 
 
-class Model(cog.Model):
+class Predictor(cog.Predictor):
     def setup(self):
         self.graph = tf.get_default_graph()
         self.sess = tf.Session(graph=self.graph)

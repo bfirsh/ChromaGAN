@@ -3,7 +3,7 @@ import os
 # DIRECTORY INFORMATION
 DATASET = "imagenet" # UPDATE
 TEST_NAME ="FirstTest"
-ROOT_DIR = os.path.abspath('../')
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 DATA_DIR = os.path.join(ROOT_DIR, 'DATASET/'+DATASET+'/')
 OUT_DIR = os.path.join(ROOT_DIR, 'RESULT/'+DATASET+'/')
 MODEL_DIR = os.path.join(ROOT_DIR, 'MODEL/'+DATASET+'/')
